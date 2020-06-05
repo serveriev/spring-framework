@@ -1,0 +1,10 @@
+*.DS_Store
+*.sw?
+.#*
+*#
+*~
+.classpath
+.idea/*
+target/*
+*.iml
+.idea
