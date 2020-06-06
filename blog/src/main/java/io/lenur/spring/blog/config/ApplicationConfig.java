@@ -8,5 +8,5 @@ import org.springframework.context.annotation.Configuration;
     "io.lenur.spring.blog.service",
     "io.lenur.spring.blog.dao"
 })
-public class PackageConfig {
+public class ApplicationConfig {
 }
