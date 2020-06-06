@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="io.lenur.spring.rapper.InjectAnnotationRandomIntBeanPostProcessor"/>
+    <bean class="io.lenur.spring.rapper.ProfilingHandlerBeanPostProcessor"/>
+    <bean class="io.lenur.spring.rapper.PostProxyInvokerContextListener"/>
+
+    <bean id="terminatorQuoter"
+          class="io.lenur.spring.rapper.TerminatorQuoter"
+          init-method="initBean"
+          destroy-method="destroyBean">
+        <property name="message" value="Hello" />
+    </bean>
+</beans>
