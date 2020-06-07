@@ -1,7 +1,9 @@
 package io.lenur.spring.blog;
 
 import io.lenur.spring.blog.config.HibernateConfig;
-import io.lenur.spring.blog.config.ApplicationConfig;
+import io.lenur.spring.blog.config.DomainConfig;
+import io.lenur.spring.blog.config.WebConfig;
+import io.lenur.spring.blog.controller.IndexController;
 import io.lenur.spring.blog.domain.Post;
 import io.lenur.spring.blog.domain.User;
 import io.lenur.spring.blog.service.PostService;
@@ -12,8 +14,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Application {
     private static final ApplicationContext context =
             new AnnotationConfigApplicationContext(
-                    ApplicationConfig.class,
-                    HibernateConfig.class
+                    DomainConfig.class,
+                    HibernateConfig.class,
+                    WebConfig.class
             );
 
     private static final UserService userService = context
@@ -31,5 +34,9 @@ public class Application {
         post.setText("Test post");
         post.addUser(user);
         postService.create(post);
+
+        IndexController controller = context
+                .getBean(IndexController.class);
+        System.out.println(controller.index());
     }
 }
