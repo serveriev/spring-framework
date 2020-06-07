@@ -16,7 +16,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@PropertySource({"hibernate.properties"})
+@PropertySource({"/WEB-INF/classes/hibernate.properties"})
 public class HibernateConfig {
     @Autowired
     private Environment environment;
