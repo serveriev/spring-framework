@@ -6,7 +6,11 @@ public class WebAnnotationConfigInitializer extends AbstractAnnotationConfigDisp
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{DomainConfig.class, HibernateConfig.class};
+        return new Class[]{
+                ApplicationConfig.class,
+                HibernateConfig.class,
+                SecurityConfig.class
+        };
     }
 
     @Override
