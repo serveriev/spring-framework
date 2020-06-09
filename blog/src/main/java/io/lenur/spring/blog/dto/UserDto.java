@@ -1,6 +1,6 @@
 package io.lenur.spring.blog.dto;
 
-public class UserDTO {
+public class UserDto {
     private String name;
 
     public String getName() {

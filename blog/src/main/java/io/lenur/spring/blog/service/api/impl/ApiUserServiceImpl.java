@@ -1,60 +1,62 @@
-package io.lenur.spring.blog.service.impl;
+package io.lenur.spring.blog.service.api.impl;
 
 import io.lenur.spring.blog.dao.UserDao;
 import io.lenur.spring.blog.domain.User;
-import io.lenur.spring.blog.dto.UserDTO;
-import io.lenur.spring.blog.dto.UserResponseDTO;
+import io.lenur.spring.blog.dto.UserDto;
+import io.lenur.spring.blog.dto.UserResponseDto;
 import io.lenur.spring.blog.exception.ModelNotFoundException;
-import io.lenur.spring.blog.service.UserService;
+import io.lenur.spring.blog.mapper.UserMapper;
+import io.lenur.spring.blog.service.api.ApiUserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class ApiUserServiceImpl implements ApiUserService {
 
     private final UserDao userDao;
 
-    public UserServiceImpl(UserDao userDao) {
+    public ApiUserServiceImpl(UserDao userDao) {
         this.userDao = userDao;
     }
 
     @Override
-    public UserResponseDTO create(UserDTO userDTO) {
+    public UserResponseDto create(UserDto dto) {
         User user = new User();
-        user.setName(userDTO.getName());
+        user.setName(dto.getName());
         userDao.create(user);
 
-        return new UserResponseDTO(user.getId(), user.getName());
+        return UserMapper.toResponse(user);
     }
 
     @Override
-    public List<UserResponseDTO> getUsers() {
+    public List<UserResponseDto> getUsers() {
         return userDao
                 .getUsers()
                 .stream()
-                .map(u -> new UserResponseDTO(u.getId(), u.getName())).collect(Collectors.toList());
+                .map(UserMapper::toResponse)
+                .collect(Collectors.toList());
     }
 
     @Override
-    public UserResponseDTO update(Long id, UserDTO userDTO) {
+    public UserResponseDto update(Long id, UserDto dto) {
         User user = userDao
                 .get(id)
                 .orElseThrow(() -> new ModelNotFoundException("An user doesn't exist"));
-        user.setName(userDTO.getName());
+        user.setName(dto.getName());
 
         userDao.update(user);
 
-        return new UserResponseDTO(user.getId(), user.getName());
+        return UserMapper.toResponse(user);
     }
 
     @Override
-    public UserResponseDTO get(Long id) {
+    public UserResponseDto get(Long id) {
         User user = userDao
                 .get(id)
                 .orElseThrow(() -> new ModelNotFoundException("An user doesn't exist"));
 
-        return new UserResponseDTO(user.getId(), user.getName());
+        return UserMapper.toResponse(user);
     }
 }

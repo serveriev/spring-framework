@@ -1,8 +1,8 @@
 package io.lenur.spring.blog.controller;
 
-import io.lenur.spring.blog.dto.UserDTO;
-import io.lenur.spring.blog.dto.UserResponseDTO;
-import io.lenur.spring.blog.service.UserService;
+import io.lenur.spring.blog.dto.UserDto;
+import io.lenur.spring.blog.dto.UserResponseDto;
+import io.lenur.spring.blog.service.api.ApiUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,25 +18,25 @@ import java.util.List;
 @RequestMapping(value = "/users")
 public class UserController {
     @Autowired
-    UserService userService;
+    ApiUserService userService;
 
     @GetMapping
-    public List<UserResponseDTO> users() {
+    public List<UserResponseDto> users() {
         return userService.getUsers();
     }
 
     @GetMapping(value = "/{id}")
-    public UserResponseDTO get(@PathVariable Long id) {
+    public UserResponseDto get(@PathVariable Long id) {
         return userService.get(id);
     }
 
     @PutMapping(value = "/{id}")
-    public UserResponseDTO update(@PathVariable Long id, @RequestBody UserDTO userDTO) {
+    public UserResponseDto update(@PathVariable Long id, @RequestBody UserDto userDTO) {
         return userService.update(id, userDTO);
     }
 
     @PostMapping
-    public UserResponseDTO create(@RequestBody UserDTO userDTO) {
+    public UserResponseDto create(@RequestBody UserDto userDTO) {
         return userService.create(userDTO);
     }
 }

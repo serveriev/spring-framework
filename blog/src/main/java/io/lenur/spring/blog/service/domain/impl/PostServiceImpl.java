@@ -1,8 +1,8 @@
-package io.lenur.spring.blog.service.impl;
+package io.lenur.spring.blog.service.domain.impl;
 
 import io.lenur.spring.blog.dao.PostDao;
 import io.lenur.spring.blog.domain.Post;
-import io.lenur.spring.blog.service.PostService;
+import io.lenur.spring.blog.service.domain.PostService;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,4 +1,4 @@
-package io.lenur.spring.blog.service;
+package io.lenur.spring.blog.service.domain;
 
 import io.lenur.spring.blog.domain.Post;
 

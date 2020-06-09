@@ -1,4 +1,4 @@
-package io.lenur.spring.blog.service;
+package io.lenur.spring.blog.service.domain;
 
 public interface BaseService<T> {
     T create(T entity);

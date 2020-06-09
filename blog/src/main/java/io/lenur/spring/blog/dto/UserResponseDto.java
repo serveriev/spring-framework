@@ -1,13 +1,8 @@
 package io.lenur.spring.blog.dto;
 
-public class UserResponseDTO {
+public class UserResponseDto {
     private Long Id;
     private String name;
-
-    public UserResponseDTO(Long id, String name) {
-        Id = id;
-        this.name = name;
-    }
 
     public String getName() {
         return name;
