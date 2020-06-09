@@ -6,7 +6,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(basePackages = {
     "io.lenur.spring.blog.service",
-    "io.lenur.spring.blog.dao"
+    "io.lenur.spring.blog.dao",
+    "io.lenur.spring.blog.exception"
 })
-public class DomainConfig {
+public class ApplicationConfig {
 }
