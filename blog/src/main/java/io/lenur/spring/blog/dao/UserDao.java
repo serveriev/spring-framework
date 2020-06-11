@@ -11,4 +11,6 @@ public interface UserDao extends BaseDao<User> {
     User update(User user);
 
     Optional<User> get(Long id);
+
+    Optional<User> findByName(String name);
 }

@@ -2,7 +2,7 @@ package io.lenur.spring.blog.dto;
 
 import javax.validation.constraints.NotEmpty;
 
-public class UserDto {
+public class UserUpdateDto {
     @NotEmpty
     private String name;
 

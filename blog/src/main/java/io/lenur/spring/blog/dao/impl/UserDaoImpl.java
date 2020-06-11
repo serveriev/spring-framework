@@ -14,17 +14,18 @@ import java.util.Optional;
 
 @Repository
 public class UserDaoImpl extends AbstractDao<User> implements UserDao {
+    private final String SELECT_QUERY =
+            "SELECT u FROM User u " +
+            "LEFT JOIN FETCH u.posts " +
+            "LEFT JOIN FETCH u.roles";
+
     @Override
     public List<User> getUsers() {
         try (Session session = sessionFactory.openSession()) {
-            Query query = session.createQuery(
-                    "SELECT u " +
-                        "FROM User u " +
-                        "LEFT JOIN FETCH u.posts "
-                    , User.class);
+            Query query = session.createQuery(SELECT_QUERY, User.class);
             return query.getResultList();
         } catch (HibernateException e) {
-            String msg = "There is something wrong in getting user's basket";
+            String msg = "There is something wrong in getting user";
             throw new DaoException(msg, e);
         }
     }
@@ -52,6 +53,21 @@ public class UserDaoImpl extends AbstractDao<User> implements UserDao {
             return Optional.ofNullable(session.find(User.class, id));
         } catch (HibernateException e) {
             String msg = "Can't fetch a user!";
+            throw new DaoException(msg, e);
+        }
+    }
+
+    @Override
+    public Optional<User> findByName(String name) {
+        try (Session session = sessionFactory.openSession()) {
+            Query query = session.createQuery(
+                    SELECT_QUERY + "WHERE u.name=:name"
+                    , User.class);
+            query.setParameter("name", name);
+            User user = (User) query.getSingleResult();
+            return Optional.ofNullable(user);
+        } catch (HibernateException e) {
+            String msg = "There is something wrong in getting user";
             throw new DaoException(msg, e);
         }
     }

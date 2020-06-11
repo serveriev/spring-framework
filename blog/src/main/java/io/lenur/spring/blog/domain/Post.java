@@ -29,7 +29,7 @@ public class Post {
     private LocalDateTime created = LocalDateTime.now();
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinTable(name = "post_user",
+    @JoinTable(name = "posts_users",
             joinColumns = @JoinColumn(name = "post_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
