@@ -15,3 +15,11 @@ if [ $ret -ne 0 ]; then
 exit $ret
 fi
 rm -rf target
+
+cd ../boot/demo
+mvn clean compile
+ret=$?
+if [ $ret -ne 0 ]; then
+exit $ret
+fi
+rm -rf target
