@@ -1,6 +1,6 @@
 cd $(dirname $0)
 
-cd ../spring-guides/gs-consuming-rest
+cd ../spring-guides/gs-relational-data-access
 mvn clean install
 ret=$?
 if [ $ret -ne 0 ]; then
