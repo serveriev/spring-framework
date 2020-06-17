@@ -1,6 +1,6 @@
 cd $(dirname $0)
 
-cd ../spring-guides/gs-scheduling-tasks
+cd ../spring-guides/gs-consuming-rest
 mvn clean install
 ret=$?
 if [ $ret -ne 0 ]; then
