@@ -1,6 +1,6 @@
 cd $(dirname $0)
 
-cd ../spring-guides/gs-validating-form-input
+cd ../spring-guides/gs-messaging-jms
 mvn clean install
 ret=$?
 if [ $ret -ne 0 ]; then
