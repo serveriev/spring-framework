@@ -1,6 +1,6 @@
 cd $(dirname $0)
 
-cd ../spring-guides/gs-batch-processing
+cd ../spring-guides/gs-securing-web
 mvn clean install
 ret=$?
 if [ $ret -ne 0 ]; then
