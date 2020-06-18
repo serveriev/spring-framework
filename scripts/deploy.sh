@@ -1,13 +1,21 @@
 cd $(dirname $0)
 
-cd ../spring-guides/gs-uploading-files
+cd ../spring-guides/gs-messaging-redis
 mvn clean install
 ret=$?
 if [ $ret -ne 0 ]; then
 exit $ret
 fi
 rm -rf target
-rm -rf upload
+
+#cd ../spring-guides/gs-uploading-files
+#mvn clean install
+#ret=$?
+#if [ $ret -ne 0 ]; then
+#exit $ret
+#fi
+#rm -rf target
+#rm -rf upload
 
 #cd ../dependency-injection
 #mvn clean compile
