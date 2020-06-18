@@ -1,6 +1,6 @@
 cd $(dirname $0)
 
-cd ../spring-guides/gs-securing-web
+cd ../spring-guides/gs-managing-transactions
 mvn clean install
 ret=$?
 if [ $ret -ne 0 ]; then
