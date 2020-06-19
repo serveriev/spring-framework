@@ -1,6 +1,6 @@
 cd $(dirname $0)
 
-cd ../spring-guides/gs-async-method
+cd ../spring-guides/gs-handling-form-submission
 mvn clean install
 ret=$?
 if [ $ret -ne 0 ]; then
