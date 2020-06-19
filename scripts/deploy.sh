@@ -1,6 +1,6 @@
 cd $(dirname $0)
 
-cd ../spring-guides/gs-messaging-stomp-websocket
+cd ../spring-guides/gs-rest-service-cors
 mvn clean install
 ret=$?
 if [ $ret -ne 0 ]; then
