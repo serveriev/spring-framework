@@ -1,6 +1,6 @@
 cd $(dirname $0)
 
-cd ../spring-guides/gs-accessing-data-jpa
+cd ../spring-guides/gs-async-method
 mvn clean install
 ret=$?
 if [ $ret -ne 0 ]; then
