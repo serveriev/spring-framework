@@ -1,6 +1,6 @@
 cd $(dirname $0)
 
-cd ../spring-guides/gs-rest-service-cors
+cd ../spring-guides/gs-accessing-data-rest
 mvn clean install
 ret=$?
 if [ $ret -ne 0 ]; then
