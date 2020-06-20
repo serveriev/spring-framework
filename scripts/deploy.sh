@@ -1,6 +1,6 @@
 cd $(dirname $0)
 
-cd ../spring-guides/gs-multi-module
+cd ../spring-guides/gs-testing-restdocs
 mvn clean install
 ret=$?
 if [ $ret -ne 0 ]; then
