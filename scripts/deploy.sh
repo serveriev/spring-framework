@@ -1,6 +1,6 @@
 cd $(dirname $0)
 
-cd ../spring-guides/gs-testing-web
+cd ../spring-guides/gs-accessing-data-mysql
 mvn clean install
 ret=$?
 if [ $ret -ne 0 ]; then
