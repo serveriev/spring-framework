@@ -1,6 +1,6 @@
 cd $(dirname $0)
 
-cd ../spring-guides/gs-reactive-rest-service
+cd ../spring-guides/gs-spring-cloud-loadbalancer
 mvn clean install
 ret=$?
 if [ $ret -ne 0 ]; then
