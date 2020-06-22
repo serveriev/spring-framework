@@ -10,7 +10,7 @@
 
     <modules>
         <module>basic</module>
-<!--        <module>single</module>-->
+        <module>single</module>
 <!--        <module>vanilla</module>-->
 <!--        <module>spring-session</module>-->
 <!--        <module>proxy</module>-->

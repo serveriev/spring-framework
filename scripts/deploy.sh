@@ -1,6 +1,6 @@
 cd $(dirname $0)
 
-cd ../spring-guides/gs-spring-cloud-loadbalancer
+cd ../spring-tutorials/tut-spring-security-and-angular-js/single
 mvn clean install
 ret=$?
 if [ $ret -ne 0 ]; then
