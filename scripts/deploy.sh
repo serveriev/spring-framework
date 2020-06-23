@@ -1,6 +1,6 @@
 cd $(dirname $0)
 
-cd ../spring-tutorials/tut-spring-security-and-angular-js/vanilla
+cd ../spring-tutorials/spring-data-rest/basic
 mvn clean install
 ret=$?
 if [ $ret -ne 0 ]; then
