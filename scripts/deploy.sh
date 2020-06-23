@@ -1,6 +1,6 @@
 cd $(dirname $0)
 
-cd ../spring-tutorials/spring-data-rest/basic
+cd ../spring-tutorials/spring-data-rest/hypermedia
 mvn clean install
 ret=$?
 if [ $ret -ne 0 ]; then
