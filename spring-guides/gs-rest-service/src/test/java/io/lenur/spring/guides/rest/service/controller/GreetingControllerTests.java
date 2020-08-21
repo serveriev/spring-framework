@@ -35,4 +35,14 @@ public class GreetingControllerTests {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.content").value("Hello, Jimmy!"));
     }
+
+    @Test
+    public void getGreetingExpectId() throws Exception {
+        this.mockMvc
+                .perform(get("/greeting"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.content").value("Hello, World!"))
+                .andExpect(jsonPath("$.id").isNumber());
+    }
 }
