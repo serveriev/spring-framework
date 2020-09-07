@@ -3,6 +3,7 @@ package io.lenur.spring.guides.accessingdatajpa;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,14 +30,17 @@ public class CustomerRepositoryTests {
         assertThat(customers).extracting(Customer::getFirstName).containsOnly(customer.getFirstName());
     }
 
-//    @Test
-//    public void findByLastId() {
-//        entityManager.persist(new Customer("first", "last"));
-//
-//        Customer customer = repository.findById(1L);
-//        assertThat(customer).isNotNull();
-//        assertThat(customer.getId()).isEqualTo(1L);
-//        assertThat(customer.getFirstName()).isEqualTo("first");
-//        assertThat(customer.getLastName()).isEqualTo("last");
-//    }
+    @Test
+    public void findByLastId() {
+        Customer customer = new Customer("first 1", "last 1");
+        entityManager.persist(customer);
+
+        Optional<Customer> customerOptional = repository.findById(customer.getId());
+        assertThat(customerOptional.isPresent()).isTrue();
+
+        Customer customer1 = customerOptional.get();
+        assertThat(customer1.getId()).isEqualTo(customer.getId());
+        assertThat(customer1.getFirstName()).isEqualTo(customer.getFirstName());
+        assertThat(customer1.getLastName()).isEqualTo(customer.getLastName());
+    }
 }
