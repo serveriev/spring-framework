@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>io.lenur</groupId>
-    <artifactId>mail</artifactId>
+    <artifactId>conditional</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
-    <description>Spring Boot mail</description>
+    <name>conditional</name>
+    <description>Spring Boot conditional</description>
 
     <properties>
         <java.version>11</java.version>
@@ -20,26 +20,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mail</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>2.13.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.13.3</version>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
