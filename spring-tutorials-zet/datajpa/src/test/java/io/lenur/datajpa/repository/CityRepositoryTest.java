@@ -25,4 +25,15 @@ public class CityRepositoryTest {
         assertNotNull(city);
         assertEquals("Warsaw", city.getName());
     }
+
+    @Test
+    void findByNameEndsWith() {
+        List<City> cities = cityRepository.findByNameEndsWith("lava");
+        assertNotNull(cities);
+        assertEquals(1, cities.size());
+
+        City city = cities.get(0);
+        assertNotNull(city);
+        assertEquals("Bratislava", city.getName());
+    }
 }
