@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>io.lenur</groupId>
-    <artifactId>datasourcebuilder</artifactId>
+    <artifactId>lazybean</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>datasourcebuilder</name>
-    <description>Spring boot DataSourceBuilder</description>
+    <name>lazybean</name>
+    <description>Spring boot Lazy Bean</description>
 
     <properties>
         <java.version>11</java.version>
@@ -20,27 +20,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
-            <scope>provided</scope>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
         <dependency>
@@ -64,5 +45,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
