@@ -25,4 +25,15 @@ public class CityServiceTest {
         assertNotNull(city);
         assertEquals("Warsaw", city.getName());
     }
+
+    @Test
+    void findAllOrderedByNameAsc() {
+        List<City> cities = cityService.findAllOrderedByNameAsc();
+        assertNotNull(cities);
+        assertEquals(8, cities.size());
+
+        City city = cities.get(0);
+        assertNotNull(city);
+        assertEquals("Berlin", city.getName());
+    }
 }
