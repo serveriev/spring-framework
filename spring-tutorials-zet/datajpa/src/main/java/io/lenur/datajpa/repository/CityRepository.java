@@ -16,6 +16,10 @@ public interface CityRepository extends CrudRepository<City, Long> {
     @Query("FROM City")
     List<City> findAllOrderedByNameAsc(Sort sort);
 
-    @Query("SELECT c FROM City c WHERE c.name LIKE %:name")
+    @Query("SELECT c FROM City c WHERE c.name LIKE CONCAT('%',:name)")
     List<City> findByNameEndsWith(@Param(value = "name") String name);
+
+    @Query("SELECT c FROM City c WHERE c.name LIKE CONCAT('%',:name) AND c.population < :num")
+    List<City> findByNameEndingWithAndPopulationLessThan(@Param("name") String name,
+                                                         @Param("num") Integer num);
 }

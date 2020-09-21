@@ -27,6 +27,17 @@ public class CityRepositoryTest {
     }
 
     @Test
+    void findByNameEndingWithAndPopulationLessThan() {
+        List<City> cities = cityRepository.findByNameEndingWithAndPopulationLessThan("lava", 432001);
+        assertNotNull(cities);
+        assertEquals(1, cities.size());
+
+        City city = cities.get(0);
+        assertNotNull(city);
+        assertEquals("Bratislava", city.getName());
+    }
+
+    @Test
     void findByNameEndsWith() {
         List<City> cities = cityRepository.findByNameEndsWith("lava");
         assertNotNull(cities);
