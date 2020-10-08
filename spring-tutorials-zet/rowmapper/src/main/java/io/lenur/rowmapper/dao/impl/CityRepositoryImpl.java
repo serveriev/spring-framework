@@ -19,14 +19,12 @@ public class CityRepositoryImpl implements CityRepository {
     @Override
     public List<City> findAll() {
         String query = "SELECT * FROM city";
-
         return jdbcTemplate.query(query, new CityMapper());
     }
 
     @Override
     public City findById(Long id) {
         String sql = "SELECT * FROM city WHERE id = ?";
-
         return jdbcTemplate.queryForObject(sql, new Object[]{id}, new CityMapper());
     }
 }
